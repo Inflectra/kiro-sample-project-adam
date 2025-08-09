@@ -1,2 +1,109 @@
-# kiro-sample-project-adam
-Sample Amazon Kiro project to try out its features
+# Online Survey Tool
+
+A simple web application that allows users to login, complete surveys, and store their responses in a database.
+
+## Features
+
+- **User Authentication**: Secure login system with session management
+- **Responsive Design**: Optimized for both mobile and desktop devices
+- **Fast Loading**: Survey section loads within 3 seconds on mobile, 2 seconds on desktop
+- **Clear Instructions**: User-friendly guidance for survey completion
+- **Prominent Survey Link**: Easy-to-find survey access from the dashboard
+- **Database Storage**: Survey responses stored securely in SQLite database
+
+## Quick Start
+
+1. **Install Dependencies**
+   ```bash
+   npm install
+   ```
+
+2. **Start the Application**
+   ```bash
+   npm start
+   ```
+
+3. **Access the Application**
+   - Open your browser and go to `http://localhost:3000`
+   - Login with default credentials:
+     - Username: `admin`
+     - Password: `admin123`
+
+## Development
+
+To run in development mode with auto-restart:
+```bash
+npm run dev
+```
+
+## Project Structure
+
+```
+online-survey-tool/
+├── server/
+│   ├── app.js              # Main server application
+│   ├── database/
+│   │   └── init.js         # Database initialization
+│   └── routes/
+│       ├── auth.js         # Authentication routes
+│       ├── dashboard.js    # Dashboard routes
+│       └── survey.js       # Survey routes
+├── public/
+│   ├── index.html          # Main HTML file
+│   ├── styles/
+│   │   └── main.css        # Application styles
+│   └── js/
+│       └── app.js          # Frontend JavaScript
+├── package.json
+└── README.md
+```
+
+## API Endpoints
+
+### Authentication
+- `POST /api/auth/login` - User login
+- `POST /api/auth/logout` - User logout
+- `GET /api/auth/status` - Check authentication status
+
+### Dashboard
+- `GET /api/dashboard/data` - Get dashboard data
+
+### Survey
+- `GET /api/survey/:id` - Get survey data
+- `POST /api/survey/:id/submit` - Submit survey response
+- `GET /api/survey/responses/my` - Get user's survey responses
+
+## Testing
+
+The application includes comprehensive test scenarios covering:
+- Mobile and desktop performance (3s/2s load time targets)
+- Cross-browser compatibility
+- Keyboard navigation and accessibility
+- Survey functionality and data storage
+- Error handling and edge cases
+
+## Security Features
+
+- Password hashing with bcrypt
+- Session-based authentication
+- Rate limiting
+- Security headers with Helmet
+- Input validation and sanitization
+
+## Browser Support
+
+- Chrome (latest)
+- Firefox (latest)
+- Safari (latest)
+- Edge (latest)
+- Mobile browsers (iOS Safari, Chrome Mobile)
+
+## Performance Targets
+
+- **Mobile**: Survey section loads within 3 seconds
+- **Desktop**: Survey section loads within 2 seconds
+- **Loading Indicators**: Shown for loads taking longer than 2 seconds
+
+## License
+
+MIT License
