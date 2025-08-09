@@ -195,3 +195,9 @@ cython_debug/
 
 # Kiro
 .kiro/settings/
+
+# NodeJS libraries and dependencies
+node_modules/
+
+# Database engine
+server/database/*.db
